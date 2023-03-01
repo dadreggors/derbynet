@@ -26,6 +26,9 @@
   <condition property="is_windows">
     <os family="windows"/>
   </condition>
+  <condition property="is_linux">
+     <os family="unix" name="Linux"/>
+   </condition>
 
   <target name="clean"
           description="Remove generated artifacts for a clean build environment">
@@ -445,7 +448,7 @@
   </exec>
 </target>
 
-<target name="dist.oneclick" depends="generated, timer-jar, timer-in-browser, docs-dist"
+<target name="dist.oneclick" if="is_windows" depends="generated, timer-jar, timer-in-browser, docs-dist"
     description="Build the &quot;one-click&quot; zip file to run Uniform Server on Windows">
   <delete dir="${uniserver-target}"/>
   <mkdir dir="${uniserver-target}"/>

@@ -30,7 +30,7 @@ openssl req -config $CONFIG -new -x509 -days 3650 -nodes -sha256 \
 	-keyout /etc/ssl/private/ssl-cert-snakeoil.key
 
 chmod 644 /etc/ssl/certs/ssl-cert-snakeoil.pem
-chmod 640 /etc/ssl/private/ssl-cert-snakeoil.key
+chmod 644 /etc/ssl/private/ssl-cert-snakeoil.key
 
 # chown root:ssl-cert /etc/ssl/private/ssl-cert-snakeoil.key
 

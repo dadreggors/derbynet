@@ -83,7 +83,7 @@ public class PlaybackSerialPortWrapper extends SerialPortWrapper {
     System.out.println("At " + pc + " interpret: " + line.trim());
     if ((line.length() > 0) && (line.charAt(0) == '#')) {
       if (line.startsWith("#on ")) {
-        commands_responses.put(line.substring(4), new Integer(pc + 1));
+        commands_responses.put(line.substring(4), Integer.valueOf(pc + 1));
         while (!program[(++pc)].equals("#end")) {
         }
         return plus1(pc);
